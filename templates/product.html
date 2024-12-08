@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='uploads/' + product.image) }}" class="img-fluid" alt="{{ product.name }}">
+    </div>
+    <div class="col-md-6">
+        <h1>{{ product.name }}</h1>
+        <p style="white-space: pre-wrap;">{{ product.description }}</p>
+        <p><strong>Price:</strong> ${{ product.price }}</p>
+        <p><strong>Size:</strong> {{ product.size }}</p>
+        <p><strong>Color:</strong> {{ product.color }}</p>
+        <p><strong>Available Quantity:</strong> {{ product.quantity }}</p>
+        <button class="btn btn-primary">Add to Cart</button>
+    </div>
+</div>
+{% endblock %}
